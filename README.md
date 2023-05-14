@@ -5,15 +5,10 @@
 ├─  Experiment_code.py
 ├─  plot.py
 ├─  README.md
-├─  dataset
-├─  figures
-├─  result_exp_1
-├─  result_exp_2
-├─  result_exp_3
-└─  result_exp_4
+└─ dataset
 ```
 
-Codes for running experiments are in file `Experiment_code.py`, there are functions for a total of four experiments in this file.
+Codes for running experiments are in file `Experiment_code.py`, there are functions for a total of four experiments in this file. We need to first create the directory `.\dataset` and download the corresponding datasets into this folder before running.
 
 
 ### [Corrspondence]:
@@ -33,7 +28,7 @@ Python packages dependencies:
 - Scikit-learn
 
 ### [Run]:
-In order to run the experiment, we first need to donwload the corresponding dataset from **LIBSVM** into `./dataset/[DATASET].txt`, the result of each experiment will be placed into the corresponding result folder `./result_exp_[EXP_INDEX]/`, there are a number of parameters we can change for each experiment, 
+In order to run the experiment, we first need to donwload the corresponding dataset from **LIBSVM** into `.\dataset\[DATASET].txt`, the result of each experiment will be placed into the corresponding result folder `.\result_exp_[EXP_INDEX]\`, there are a number of parameters we can change for each experiment, 
 ```
 -i    # Should be within [1, 2, 3, 4], specifying the experiments to run.
 -d    # Name of the data set, for example 'a1a'.

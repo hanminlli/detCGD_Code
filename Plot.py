@@ -3,6 +3,8 @@ import argparse
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
+import warnings
+warnings.filterwarnings("ignore")
 plt.rcParams['text.usetex'] = True
 matplotlib.rc('xtick', labelsize=12)
 matplotlib.rc('ytick', labelsize=12)
@@ -59,12 +61,12 @@ if __name__ == "__main__":
         plt.plot(iterations, arrnm[1],
                  label=r"CGD-mat",
                  marker='v', markevery=500, linestyle='dashed')
-        plt.plot(iterations, arrnm[2],
-                 label=r"det-CGD$1$ with $\bf{D}_1$",
-                 marker='<', markevery=600, linestyle='dotted')
         plt.plot(iterations, arrnm[3],
-                 label=r"det-CGD$2$ with $\bf{D}_2$",
+                 label=r"det-CGD$2$ with $\bf{D}_1$",
                  marker='^', markevery=400, linestyle='dashdot')
+        plt.plot(iterations, arrnm[2],
+                 label=r"det-CGD$1$ with $\bf{D}_2$",
+                 marker='<', markevery=600, linestyle='dotted')
         # plt.plot(iterations, arrnm[4],
         #          label=r"Standard GD",
         #          marker='>', markevery=500, linestyle=(0, (1, 1)))
@@ -105,12 +107,13 @@ if __name__ == "__main__":
         plt.plot(iterations, arrnm[1],
                  label=r"CGD-mat",
                  marker='v', markevery=500, linestyle='dashed')
-        plt.plot(iterations, arrnm[2],
+        plt.plot(iterations, arrnm[3],
                  label=r"det-CGD$1$ with $\bf{D}$",
                  marker='<', markevery=600, linestyle='dotted')
-        plt.plot(iterations, arrnm[3],
+        plt.plot(iterations, arrnm[2],
                  label=r"det-CGD$2$ with $\bf{D}$",
                  marker='^', markevery=400, linestyle='dashdot')
+        plt.grid(axis='x', linestyle='dashed')
         plt.legend(prop=font3)
         # plt.savefig("Exp_2_lam_{}".format(lam) + dataset + ".pdf")
         plt.savefig(os.path.join('figures', "Exp_2_lam_{}_rand_{}_".format(lam, t) + dataset + ".png"))

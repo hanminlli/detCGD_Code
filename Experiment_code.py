@@ -9,6 +9,19 @@ from sklearn.utils import shuffle
 # Using latex for the axis of the plot
 # plt.rcParams['text.usetex'] = True
 
+def prep():
+    """
+    Initializations
+    """
+    directory_list = ['result_exp_1', 'result_exp_2', 'result_exp_3', 'result_exp_4', 'figures']
+    directory_dataset = 'dataset'
+    if not os.path.exists(directory_dataset):
+        os.makedirs(directory_dataset)
+        raise Exception("No dataset detected")
+    for dir in directory_list:
+        if not os.path.exists(dir):
+            os.makedirs(dir)
+
 def cal_sum_rank_1(A):
     """
     Calculate the first part of the smoothness matrix (1/4 sum) and the threshold lambda
@@ -1047,6 +1060,7 @@ args = parser.parse_args()
 
 
 if __name__ == "__main__":
+    prep()
 
     # Hyperparameters
     cur_exp = int(args.exp_index)
